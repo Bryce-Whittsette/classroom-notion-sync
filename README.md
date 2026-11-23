@@ -51,7 +51,7 @@ Status options: `Completed`, `Late`, `No Due Date`, `Missing`, `Due Soon`, `Upco
 - A failed run may have updated some rows. Rerunning is supported, but do not run concurrent sync processes against the same data source.
 - `--dry-run` still reads both services and can create or refresh the local OAuth token; it makes no Notion writes.
 
-Run from the directory containing `.env`, `credentials.json`, and `token.json`, or set `TRACKER_CONFIG_DIR` to that directory. Credentials are excluded from Git. The token file is written with owner-only filesystem permissions on systems that support them.
+Run from the directory containing `.env`, `credentials.json`, and `token.json`, or set `TRACKER_CONFIG_DIR` to that directory. For a scheduled job, set an absolute `TRACKER_CONFIG_DIR` so the sync can find those files regardless of where the scheduler starts it. Credentials are excluded from Git. The token file is written with owner-only filesystem permissions on systems that support them.
 
 ## Development
 
